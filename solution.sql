@@ -29,7 +29,7 @@ INSERT INTO book_backup (id, title, author_id, subject_id)
     VALUES (12345, 'The Unifying Force', 6789, 2456);
 
 --8. What authors have books that are not in stock?
---Answer: SELECT first_name, last_name FROM authors JOIN books
+SELECT first_name, last_name FROM authors JOIN books
 ON authors.id = books.author_id JOIN editions
 ON books.id = editions.book_id JOIN stock
 ON editions.isbn = stock.isbn WHERE stock = 0;
